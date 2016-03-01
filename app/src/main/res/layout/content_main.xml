@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    tools:context=".TFOta"
+    tools:showIn="@layout/app_bar_main"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imgROM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/logoteam"
+        android:layout_marginBottom="30dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:baselineAlignBottom="false"
+        android:cropToPadding="false"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:layout_below="@+id/imgROM"
+        android:id="@+id/txtUpdate"
+        android:layout_gravity="center_horizontal" />
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="3dp"
+        android:layout_height="80dp"
+        android:layout_width="fill_parent"
+        card_view:cardUseCompatPadding="true" >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+    <TextView
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblDevice"
+        android:id="@+id/lblDevice"/>
+
+    <TextView
+        android:paddingLeft="20dp"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txtDevice"
+        android:id="@+id/txtDevice"
+        android:layout_below="@+id/lblDevice"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="3dp"
+        android:layout_height="80dp"
+        android:layout_width="fill_parent"
+        card_view:cardUseCompatPadding="true" >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+    <TextView
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblVendor"
+        android:id="@+id/lblVendor"/>
+
+    <TextView
+        android:paddingLeft="20dp"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txtVendor"
+        android:id="@+id/txtVendor"
+        android:layout_below="@+id/lblVendor"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="3dp"
+        android:layout_height="80dp"
+        android:layout_width="fill_parent"
+        card_view:cardUseCompatPadding="true" >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+    <TextView
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblRom"
+        android:id="@+id/lblRom"/>
+
+    <TextView
+        android:paddingLeft="20dp"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txtRom"
+        android:id="@+id/txtRom"
+        android:layout_below="@+id/lblRom"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="3dp"
+        android:layout_height="80dp"
+        android:layout_width="fill_parent"
+        card_view:cardUseCompatPadding="true" >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+    <TextView
+        android:paddingLeft="10dp"
+        android:layout_margin="5dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblVersion"
+        android:id="@+id/lblVersion"/>
+
+    <TextView
+        android:paddingLeft="20dp"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/txtVersion"
+        android:id="@+id/txtVersion"
+        android:layout_below="@+id/lblVersion"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+    </ScrollView>

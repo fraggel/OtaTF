@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Actualizar sistema</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="lblDevice">Modelo</string>
+    <string name="txtDevice">Device</string>
+    <string name="lblVendor">Marca</string>
+    <string name="txtVendor">Vendor</string>
+    <string name="lblRom">Rom</string>
+    <string name="txtRom">Rom</string>
+    <string name="lblVersion">Versión</string>
+    <string name="txtVersion">Version</string>
+    <string name="errorNotFound">No encontrado</string>
+    <string name="ntfTitleNVTxt">Actualización disponible</string>
+    <string name="msgDownInit">Descarga iniciada</string>
+    <string name="msgDownFinished">Descarga Finalizada</string>
+    <string name="msgErrorVersion">Error al obtener la última version disponible</string>
+    <string name="msgNoPossibleConnect">No se ha podido conectar con el servidor de actualizaciones, Inténtalo más tarde</string>
+    <string name="msgNoNeedUpdate">Ya dispones de la última versión</string>
+    <string name="msgCheckUpdate">Comprobar Actualizaciones</string>
+    <string name="msgUpdateFound">Descargar Actualización</string>
+    <string name="txtActualVersion">Version Instalada</string>
+    <string name="txtNewVersion">Nueva</string>
+    <string name="lblChangelog">Changelog:</string>
+    <string name="txtDownloading">Descargando...</string>
+    <string name="txtCheckUpd">Comprobando actualizaciones...</string>
+    <string name="txtInstallUpd">Instalar actualización</string>
+    <string name="msgDownFailed">Descarga incorrecta, por favor inténtalo de nuevo</string>
+    <string name="notificacionChkNews">Comprobar Actualizaciones</string>
+    <string name="txtTimeInterval">Tiempo de comprobación</string>
+    <string-array name="time">
+        <item>"A diario"</item>
+        <item>"Semanalmente"</item>
+        <item>"Cada 15 días"</item>
+        <item>"Mensualmente"</item>
+    </string-array>
+    <string name="title_activity_details">Detalles de actualización</string>
+    <string name="msgTitleInstall">Modo de instalación</string>
+    <string name="msgTextInstall">Automático: El modo automático instalará automáticamente la actualización, dependiendo del recovery que tengas actualmente instalado este modo puede no funcionar correctamente\n\nManual: Reiniciará en recovery y deberás instalar el zip que se encuentra en :\n</string>
+    <string name="msgInstallManual">Manual</string>
+    <string name="msgInstallAuto">Automático</string>
+    <string name="txtOnlyWifi">Descargar solo por WiFi</string>
+    <string name="msgNoWifi">No estás conectado a una red WiFi, por favor conéctate a una e inténtalo de nuevo</string>
+    <string name="msgNoInet">No hay internet</string>
+    <string name="social">Social</string>
+    <string name="share">Compartir</string>
+</resources>
