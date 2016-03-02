@@ -91,7 +91,7 @@ public class Details extends ActionBarActivity implements View.OnClickListener, 
                 String txtChange = "";
                 String[] split1 = split[4].split("#");
                 for (int x = 0; x < split1.length; x++) {
-                    txtChange = txtChange + new String(split1[x].getBytes("ISO885915"),"ISO885915") + "\n";
+                    txtChange = txtChange + new String(split1[x].getBytes("ISO-8859-15"),"ISO-8859-15") + "\n";
                 }
 
                 txtChangelog.setText(txtChange);
@@ -181,7 +181,9 @@ public class Details extends ActionBarActivity implements View.OnClickListener, 
                                         bos2.flush();
                                         bos2.close();
                                         ((PowerManager) getSystemService(POWER_SERVICE)).reboot("recovery");
-                                    }catch (Exception e){}
+                                    }catch (Exception e){
+                                        e.printStackTrace();
+                                    }
 
                                 }
                             })
