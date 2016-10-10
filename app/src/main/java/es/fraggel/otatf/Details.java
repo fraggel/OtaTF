@@ -15,7 +15,12 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,7 +37,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 
 
-public class Details extends ActionBarActivity implements View.OnClickListener, AsyncResponse {
+public class Details extends ActionBarActivity implements View.OnClickListener, AsyncResponse, NavigationView.OnNavigationItemSelectedListener {
 
     TextView txtUpdate=null;
     TextView txtChangelog=null;
@@ -50,6 +55,21 @@ public class Details extends ActionBarActivity implements View.OnClickListener, 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ajustes=getSharedPreferences("otatf", Context.MODE_PRIVATE);
+        super.onCreate(savedInstanceState);
+        //setContentView(R.layout.content_config);
+        setContentView(R.layout.activity_details);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarDetails);
+        setSupportActionBar(toolbar);
+
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layoutDetails);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_viewDetails);
+        navigationView.setNavigationItemSelectedListener(this);
         BufferedReader brh=null;
 
         try {
@@ -70,8 +90,6 @@ public class Details extends ActionBarActivity implements View.OnClickListener, 
         }catch(Exception e){
 
         }
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details);
         try {
             Bundle b = this.getIntent().getExtras();
             String[] split = b.getStringArray("Update");
@@ -287,5 +305,32 @@ public class Details extends ActionBarActivity implements View.OnClickListener, 
         if (output != null && !"TIMEOUT".equals(output)) {
             imgROM.setBackground(Drawable.createFromPath(Environment.getExternalStorageDirectory() + "/tfota/downloads/" + md5.trim()));
         }
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_update) {
+            Intent intent = new Intent(this, TFOta.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }else if (id == R.id.nav_settings) {
+            Intent intent = new Intent(this, ConfigActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+
+        }else if(id == R.id.nav_share){
+            /*ShareActionProvider mShareActionProvider = (ShareActionProvider) item.getActionProvider();
+            if (mShareActionProvider != null) {
+                mShareActionProvider.setShareIntent(getIntent());
+            }*/
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layoutConfig);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
