@@ -209,7 +209,18 @@ public class Details extends ActionBarActivity implements View.OnClickListener, 
                             .show();
 
                 }else {
+                    try {
+                        File f1 = new File(Environment.getExternalStorageDirectory() + "/tfota/downloads/");
+                        if (!f1.exists()) {
+                            f1.mkdirs();
+                        }else{
+                            File[] files = f1.listFiles();
+                            for(int x=0;x<files.length;x++){
+                                files[x].delete();
+                            }
+                        }
 
+                    }catch (Exception e){}
                     boolean onlyWifi=ajustes.getBoolean("onlyWifi",true);
                     if(onlyWifi){
                         if (Utilidades.wifiConnected(this)) {
